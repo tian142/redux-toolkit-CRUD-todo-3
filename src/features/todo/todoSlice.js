@@ -20,6 +20,13 @@ const todoSlice = createSlice({
     deleteTodo: (state, action) => {
       state.splice(action.payload, 1)
     },
+    editTodo: (state, action) => {
+      const { id, todo } = action.payload
+      const existingTodo = state.find((todo) => todo.id === id)
+      if (existingTodo) {
+        existingTodo.todo = todo
+      }
+    },
   },
 })
 
