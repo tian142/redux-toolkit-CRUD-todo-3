@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <div>
       <h1>Todo List</h1>
-      <Link>Home</Link>
+      <Link to="/">Home</Link>
       <hr />
     </div>
   )

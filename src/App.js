@@ -1,5 +1,4 @@
 import "./App.css"
-import { Navbar } from "./Navbar"
 
 import {
   BrowserRouter as Router,
@@ -8,13 +7,17 @@ import {
   Redirect,
 } from "react-router-dom"
 
+import { Navbar } from "./Navbar"
+import { AddTodo } from "./features/todo/AddTodo"
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
         <Switch>
-          <Route />
+          <Route exact path="/" render={() => <AddTodo />} />
+          <Redirect to="/" />
         </Switch>
       </Router>
     </div>
