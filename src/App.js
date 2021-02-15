@@ -1,4 +1,5 @@
 import "./App.css"
+import React from "react"
 
 import {
   BrowserRouter as Router,
@@ -9,6 +10,7 @@ import {
 
 import { Navbar } from "./Navbar"
 import { AddTodo } from "./features/todo/AddTodo"
+import { TodoList } from "./features/todo/TodoList"
 
 function App() {
   return (
@@ -16,7 +18,17 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" render={() => <AddTodo />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <AddTodo />
+                <TodoList />
+              </>
+            )}
+          />
+
           <Redirect to="/" />
         </Switch>
       </Router>
