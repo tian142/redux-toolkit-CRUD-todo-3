@@ -12,6 +12,7 @@ import { Navbar } from "./Navbar"
 import { AddTodo } from "./features/todo/AddTodo"
 import { TodoList } from "./features/todo/TodoList"
 import { SingleTodo } from "./features/todo/SingleTodo"
+import { EditTodo } from "./features/todo/EditTodo"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             )}
           />
           <Route exact path="/todo/:todoId" component={SingleTodo} />
+          <Route exact path="/edit/:todoId" component={EditTodo} />
           <Redirect to="/" />
         </Switch>
       </Router>
